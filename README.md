@@ -13,7 +13,7 @@ Another example: you are writing a web application in which users are either adm
 
 How can our code reflect that fact that these different categories of things all share some, or even many, characteristics but all have some unique attributes as well? Well, we could write separate admin, instructor and student class that each contain repetitious code to lend each of these classes shared attributes and behaviors. We know, however, that repetitious code is always something to be avoided. Not only is it time consuming, but what happens when we need to make a change to this shared behavior? We'd have to code the same change in three places.
 
-Instead, we can use **inheritance**. The use of inheritance allows us to create a family of classes with shared behavior, while still differentiating those classes. With inheritance, we could *inherit* the admin, instructor and student classes from a user class. Then, any changes made to the user class would apply to the other class.
+Instead, we can use **inheritance**. The use of inheritance allows us to create a family of classes with shared behavior, while still differentiating those classes. With inheritance, we could _inherit_ the admin, instructor and student classes from a user class. Then, any changes made to the user class would apply to the other class.
 
 While you may not write your own classes that use inheritance very frequently, you will encounter it frequently as a Ruby on Rails web developer. Once we introduce the use of databases and the challenge of connecting our programs to our database, you'll encounter inheritance in nearly every program you write for the web. More on that (much) later.
 
@@ -66,11 +66,11 @@ class Car < Vehicle
 end
 ```
 
-We use the `<` to inherit the `Car` class from `Vehicle`. Notice that there are *no methods defined in the `Car` class*.
+We use the `<` to inherit the `Car` class from `Vehicle`. Notice that there are _no methods defined in the `Car` class_.
 
 Run the test suite again and you'll see that you are passing a number of tests for the `Car` class.
 
-Wow! We didn't write *anything* in our `Car` class but instances of `Car` class *inherit* all of the `Vehicle` methods and therefore have access to them. We're still failing the `#go` test however. Looks like the test is expecting the `#go` method on an individual car to return the phrase: `"VRRROOOOOOOOOOOOOOOOOOOOOOOM!!!!!"`. This is different than the return value of the `#go` method that we inherited from the `Vehicle` class.
+Wow! We didn't write _anything_ in our `Car` class but instances of `Car` class _inherit_ all of the `Vehicle` methods and therefore have access to them. We're still failing the `#go` test however. Looks like the test is expecting the `#go` method on an individual car to return the phrase: `"VRRROOOOOOOOOOOOOOOOOOOOOOOM!!!!!"`. This is different than the return value of the `#go` method that we inherited from the `Vehicle` class.
 
 Let's overwrite the inherited `go` method with one specific to `Car`.
 
@@ -90,6 +90,6 @@ Now, run the tests again and you should be passing all of them.
 
 #### Method Look-Up in Ruby
 
-How does our above example work? Well, when your program is being executed, at the point at which the `#go` method is invoked, the compiler will first look in the class to which the instance of car that we are calling the method on belongs. If it finds a `#go` method there, it will execute *that method*. If it doesn't find such a method there, it will move on to look in the parent class that this class inherits from.
+How does our above example work? Well, when your program is being executed, at the point at which the `#go` method is invoked, the compiler will first look in the class to which the instance of car that we are calling the method on belongs. If it finds a `#go` method there, it will execute _that method_. If it doesn't find such a method there, it will move on to look in the parent class that this class inherits from.
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/oo-inheritance-code-along'>Intro to Inheritance</a> on Learn.co and start learning to code for free.</p>
